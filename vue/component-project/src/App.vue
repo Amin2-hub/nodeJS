@@ -1,24 +1,13 @@
 <template>
-  <VueComponent />
   <nav>
+    <!-- router-link는 a태그를 기본으로 함 -->
     <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+    <router-link to="/dataBinding">DataBinding</router-link>
   </nav>
   <router-view/>
 </template>
 
-<script>
-import VueComponent from './components/VueComponent.vue'
-
-export default {
-  components : {
-    VueComponent
-  }
-}
-</script>
-
-
-<style> 
+<style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
