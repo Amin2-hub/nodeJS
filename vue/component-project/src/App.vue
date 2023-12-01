@@ -1,8 +1,12 @@
 <template>
   <nav>
     <!-- router-link는 a태그를 기본으로 함 -->
-    <router-link to="/">Home</router-link> |
-    <router-link to="/dataBinding">DataBinding</router-link>
+    | <router-link to="/">Home</router-link> |
+    <router-link to="/dataBinding">DataBinding</router-link> |
+    <router-link to="/listBinding">ListBinding</router-link> |
+    <router-link to="/ifBinding">IFBinding</router-link> |
+    <router-link to="/onEvent">OnEvent</router-link> |
+    <router-link to="/options">Options</router-link> |
   </nav>
   <router-view/>
 </template>

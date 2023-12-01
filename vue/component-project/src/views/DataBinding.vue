@@ -18,13 +18,26 @@
         <p>{{ selectModel }}</p>
         <textarea v-model="textModel" />
         <hr>
-        <input type="checkbox" v-model="chData" true-value="여" false-value="부">
+        <input type="checkbox" v-model="chData" true-value="점심" false-value="저녁">
         <p>{{ chData }}</p>
         <div>
             <input type="checkbox" value="서울" v-model="city">서울
             <input type="checkbox" value="대구" v-model="city">대구
             <p>{{ city }}</p>
         </div>
+        <div>
+            <input type="radio" value="독서" v-model="hobby">독서
+            <input type="radio" value="영화" v-model="hobby">영화
+            <input type="radio" value="운동" v-model="hobby">운동
+            <p>{{ hobby }}</p>
+        </div>
+        <hr>
+        <img v-bind:style="styleData" v-bind:src="imgUrl">
+        <!-- <img v-bind:style="[backSetting, addStyle]" <-권장안함 v-bind:src="imgUrl"> -->
+        <div class="container" v-bind:class="{
+            'active' : isActive, 'text-red' : hasError
+        }">Class Binding First</div>
+        <div class="container" v-bind:class="myClass">Class Binding Second</div>
     </div>
 </template>
 <script>
@@ -36,10 +49,41 @@
                 valueModel : 'Korea',
                 numberModel : 0,
                 selectModel : 'winter',
-                textModel : '제발 그만해',
+                textModel : 'ㅇㅁㅇ',
                 chData : '멈춰!',
-                city : ''
+                city : [],
+                hobby : '영화',
+                imgUrl : 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-H_O3EhrA9DhEbio25HHn69eUp9O-O-4NYINBMUis5tXmc03BjG3WCmEJQVt4dQdaU_8&usqp=CAU',
+                styleData : {
+                    backgroundColor : 'skyblue',
+                    width : '300px',
+                    border : '2px solid skyblue',
+                    borderRadius : '50px'
+                },
+                // backSetting : 'backgroud-color:skyblue; width:200px',
+                // addStyle : 'height: 200px;'
+                isActive : false,
+                //hasError : !this.isActive
+                myClass : 'active'
+            }
+        },
+        computed : {
+            hasError() {
+                return !this.isActive;
             }
         }
     }
 </script>
+<style scoped>
+    .container {
+        width : 100%;
+        height : 200px;
+    }
+    .active {
+        background-color: rgb(0, 119, 255);
+        font-weight: bold;
+    }
+    .text-red {
+        color : red;
+    }
+</style>
