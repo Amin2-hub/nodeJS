@@ -10,10 +10,6 @@ const pool = mysql.createPool({
     connectionLimit : process.env.MYSQL_LIMIT
 });
 
-//커넥션에 쿼리문 전달
-// pool.query('sql문', '값', (err, results)=>{
-// }) 
-
 const query = async (alias, values) => {
     return new Promise((resolve, reject) => {
         pool.query(sql[alias], values, (err, results) => {

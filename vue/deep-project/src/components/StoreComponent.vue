@@ -1,13 +1,13 @@
 <template>
    <div>
       <form>
-         <label>제품ID : <input type="text" v-model="productInfo.product_id"></label><br />
-         <label>제품명 : <input type="text" v-model="productInfo.product_name"></label><br />
+         <label>제품ID <input class="form-control" type="text" v-model="productInfo.product_id"></label><br />
+         <label>제품명 <input class="form-control" type="text" v-model="productInfo.product_name"></label><br />
          <label>카테고리 : 
             <input type="radio" value="A" v-model="productInfo.category">A
             <input type="radio" value="B" v-model="productInfo.category">B
          </label><br />
-         <button type="button" @click="addCart">추가</button>
+         <button type="button" class="btn btn-outline-secondary" @click="addCart">추가</button>
       </form>
       <table class="table">
          <thead>
@@ -54,7 +54,7 @@ export default{
             product_name : this.productInfo.product_name,
             category : this.productInfo.category
          }
-         this.$store.commit('addProduct', obj);
+         this.$store.dispatch('addProduct', obj);
       }
    }
 }
