@@ -37,7 +37,7 @@
       <router-link to="/" class="btn btn-secondary">목록</router-link> 
       <!-- router-link는 기본이 a태그 다른거 쓰고싶으면 tag쓰면됨 -->
       <!-- to : path -->
-      <button class="btn btn-danger" @click="deleteInfo(userInfo.user_id)">삭제</button>
+      <button class="btn btn-danger" @click="deleteInfo(empInfo.emp_no)">퇴사처리</button>
    </div>
    </div>
 </template>

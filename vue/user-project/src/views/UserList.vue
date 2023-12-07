@@ -23,8 +23,8 @@
          </tbody>
       </table>
       <div class="row">
-      <router-link to="/userInsert" class="btn btn-secondary">등록</router-link> 
-   </div>
+         <router-link to="/userInsert" class="btn btn-secondary">등록</router-link> 
+      </div>
    </div>
 </template>
 <script>

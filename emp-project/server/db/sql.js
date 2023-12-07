@@ -34,7 +34,7 @@ module.exports = {
             where h.to_date = CAST('9999-01-01' as date)
             and s.to_date = CAST('9999-01-01' as date)
             and e.emp_no = ?`,
-   detpList : `SELECT dept_no, dept_name 
+   deptList : `SELECT dept_no, dept_name 
                FROM departments order by dept_no`,
    empInsert : `INSERT INTO employees SET ?`,
    deptInsert : `INSERT INTO dept_emp 

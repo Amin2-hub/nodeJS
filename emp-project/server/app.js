@@ -18,6 +18,7 @@ app.get('/', (req, res)=>
 });
 
 app.get('/emps', async(req, res) => {
+   console.log('요청받음');
    let list = await mysql.query('empList');
    res.send(list);
 });
